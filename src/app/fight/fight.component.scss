@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  .teams {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    gap: 1rem;
+    dice-team {
+      &:first-child {
+        direction: rtl;
+      }
+    }
+  }
+  .buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+    font-size: 8rem;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+    span {
+      min-width: 8rem;
+      text-align: center;
+    }
+  }
+}

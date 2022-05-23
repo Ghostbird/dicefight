@@ -1,0 +1,25 @@
+<div class="teams">
+  <dice-team #attacker name="Aanvaller" color="red"></dice-team>
+  <dice-team #defender name="Verdediger" color="blue"></dice-team>
+</div>
+<div class="buttons">
+  <span
+    class="text-button"
+    [ngClass]="{ disabled: !attacker.losses && !defender.losses }"
+    (click)="applyLoss()"
+    >🖩</span
+  >
+  <span
+    class="text-button"
+    [ngClass]="{
+      disabled:
+        !attacker.dice.length ||
+        !defender.dice.length ||
+        attacker.losses ||
+        defender.losses
+    }"
+    (click)="fight()"
+    >⚔</span
+  >
+  <span class="text-button" (click)="reset()">↺</span>
+</div>

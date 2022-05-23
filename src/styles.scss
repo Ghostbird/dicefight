@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 0.8vmax;
+  body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    user-select: none;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .disabled {
+    filter: grayscale(0.5) opacity(0.5);
+    pointer-events: none;
+  }
+  .text-button {
+    user-select: none;
+    cursor: pointer;
+  }
+}

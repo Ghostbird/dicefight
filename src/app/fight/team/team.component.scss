@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  flex: 1 1 auto;
+  .header {
+    width: 100%;
+    display: grid;
+    grid: "title buttons" 1fr / 1fr 1fr;
+    h1 {
+      display: inline;
+      font-size: 5rem;
+      grid-area: "title";
+      overflow: hidden;
+      text-overflow: ellipsis;
+      direction: ltr;
+    }
+    .buttons {
+      display: inline;
+      grid-area: "buttons";
+      font-size: 8rem;
+      text-align: end;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    .stats {
+      padding: 1rem;
+      display: flex;
+      text-align: end;
+      flex-direction: column;
+      font-size: 5rem;
+    }
+    .dice {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-height: calc(100vh - 24rem);
+      align-content: flex-start;
+      transition: all 0.3 ease-in-out;
+      .dead {
+        font-size: 8rem;
+      }
+    }
+  }
+}

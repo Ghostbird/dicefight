@@ -1,0 +1,30 @@
+<div class="header">
+  <h1>{{ name }}</h1>
+  <div class="buttons text-button">
+    <i
+      class="df-F-plus text-button"
+      [ngClass]="{ disabled: losses }"
+      (click)="addDie()"
+    ></i>
+    <i
+      class="df-F-minus"
+      [ngClass]="{ disabled: losses }"
+      (click)="removeDie()"
+    ></i>
+  </div>
+</div>
+<div class="content">
+  <div class="dice">
+    <div class="dead" *ngIf="!dice.length">☠</div>
+    <dice-die
+      *ngFor="let die of dice; index as i; trackBy: trackById"
+      [die]="die"
+    ></dice-die>
+  </div>
+  <div class="stats">
+    <span>Legers</span>
+    <span>{{ dice.length }}</span>
+    <span *ngIf="losses">Verliezen</span>
+    <span *ngIf="losses">{{ losses }}</span>
+  </div>
+</div>
