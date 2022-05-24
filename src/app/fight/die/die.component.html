@@ -1,1 +1,1 @@
-<i [class]="'df' + die.diePrefix + '-d' + die.max + '-' + die.value"></i>
+<i [class]="'df' + die.diePrefix + '-d' + die.max + '-' + (die.animatedValue$ | async)"></i>
