@@ -4,20 +4,19 @@
 </div>
 <div class="buttons">
   <span
-    class="text-button"
-    [ngClass]="{ disabled: !attacker.losses && !defender.losses }"
+    class="text-button calculator"
+    *ngIf="attacker.losses || defender.losses"
     (click)="applyLoss()"
     >🖩</span
   >
   <span
     class="text-button"
-    [ngClass]="{
-      disabled:
-        !attacker.dice.length ||
-        !defender.dice.length ||
-        attacker.losses ||
-        defender.losses
-    }"
+    *ngIf="
+      attacker.dice.length &&
+      defender.dice.length &&
+      !attacker.losses &&
+      !defender.losses
+    "
     (click)="fight()"
     >⚔</span
   >
