@@ -4,8 +4,12 @@ import { FightComponent } from './fight.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':shareId',
     component: FightComponent,
+  },
+  {
+    path: '',
+    redirectTo: Math.random().toString(36).substring(2)
   }
 ];
 

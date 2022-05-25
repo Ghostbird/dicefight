@@ -1,6 +1,6 @@
 <div class="header">
   <h1>{{ name }}</h1>
-  <div class="buttons text-button">
+  <div *ngIf="!remoteControlled" class="buttons text-button">
     <i
       class="df-F-plus text-button"
       [ngClass]="{ disabled: losses }"

@@ -1,24 +1,44 @@
-<div class="teams">
-  <dice-team #attacker name="Aanvaller" color="red"></dice-team>
-  <dice-team #defender name="Verdediger" color="blue"></dice-team>
-</div>
-<div class="buttons">
-  <span
-    class="text-button calculator"
-    *ngIf="attacker.losses || defender.losses"
-    (click)="applyLoss()"
-    >∆</span
-  >
-  <span
-    class="text-button"
-    *ngIf="
-      attacker.dice.length &&
-      defender.dice.length &&
-      !attacker.losses &&
-      !defender.losses
-    "
-    (click)="fight()"
-    >⚔</span
-  >
-  <span class="text-button" (click)="reset()">↺</span>
-</div>
+<ng-container *ngIf="remote$ | async as remote; else localControl">
+  <div class="teams">
+    <dice-team
+      [name]="remote.attacker.name"
+      [color]="remote.attacker.color"
+      [losses]="remote.attacker.losses"
+      [dice]="remote.attacker.dice"
+      [remoteControlled]="true"
+    ></dice-team>
+    <dice-team
+      [name]="remote.defender.name"
+      [color]="remote.defender.color"
+      [losses]="remote.defender.losses"
+      [dice]="remote.defender.dice"
+      [remoteControlled]="true"
+    ></dice-team>
+  </div>
+</ng-container>
+<ng-template #localControl>
+  <div class="teams">
+    <dice-team #attacker name="Aanvaller" color="red"></dice-team>
+    <dice-team #defender name="Verdediger" color="blue"></dice-team>
+  </div>
+  <div class="buttons">
+    <span
+      class="text-button calculator"
+      *ngIf="attacker.losses || defender.losses"
+      (click)="applyLoss()"
+      >∆</span
+    >
+    <span
+      class="text-button"
+      *ngIf="
+        attacker.dice.length &&
+        defender.dice.length &&
+        !attacker.losses &&
+        !defender.losses
+      "
+      (click)="fight()"
+      >⚔</span
+    >
+    <span class="text-button" (click)="reset()">↺</span>
+  </div>
+</ng-template>

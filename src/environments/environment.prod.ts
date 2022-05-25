@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  webSocketUri: () => `wss://${window.location.hostname}/share`
 };

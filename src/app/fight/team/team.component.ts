@@ -1,4 +1,5 @@
 import { Component, HostBinding, Input, TrackByFunction } from '@angular/core';
+import { Team } from 'src/app/fight/team/team.model';
 import { Die } from '../die/die.model';
 
 @Component({
@@ -9,8 +10,9 @@ import { Die } from '../die/die.model';
 export class TeamComponent {
   @HostBinding('style.color') @Input() color: string = 'inherit';
   @Input() name!: string;
-  losses: number = 0;
-  dice: Die[] = [new Die()];
+  @Input() remoteControlled = false;
+  @Input() losses: number = 0;
+  @Input() dice: Die[] = [new Die()];
 
   rollAndSort() {
     this.dice.forEach(die => die.roll())
@@ -37,4 +39,13 @@ export class TeamComponent {
   }
 
   trackById: TrackByFunction<Die> = (_, die) => die.id;
+
+  getState(): Team {
+    return {
+      dice: this.dice.map(die => die.getState()),
+      losses: this.losses,
+      name: this.name,
+      color: this.color
+    }
+  }
 }
