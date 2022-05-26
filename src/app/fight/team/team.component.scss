@@ -4,7 +4,7 @@
   .header {
     width: 100%;
     display: grid;
-    grid: "title buttons" 1fr / 1fr 1fr;
+    grid: "title buttons" 1fr / auto;
     h1 {
       display: inline;
       font-size: 5rem;
