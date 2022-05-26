@@ -40,9 +40,9 @@ export class TeamComponent {
 
   trackById: TrackByFunction<Die> = (_, die) => die.id;
 
-  getState(): Team {
+  getState(animate = false): Team {
     return {
-      dice: this.dice.map(die => die.getState()),
+      dice: this.dice.map(die => die.getState(animate)),
       losses: this.losses,
       name: this.name,
       color: this.color
