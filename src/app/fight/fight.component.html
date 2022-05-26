@@ -18,8 +18,8 @@
 </ng-container>
 <ng-template #localControl>
   <div class="teams">
-    <dice-team #attacker name="Aanvaller" color="red"></dice-team>
-    <dice-team #defender name="Verdediger" color="blue"></dice-team>
+    <dice-team #attacker name="Aanvaller" color="red" (diceChanges)="shareState()"></dice-team>
+    <dice-team #defender name="Verdediger" color="blue" (diceChanges)="shareState()"></dice-team>
   </div>
   <div class="buttons">
     <span

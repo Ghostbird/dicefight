@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, TrackByFunction } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output, TrackByFunction } from '@angular/core';
 import { Team } from 'src/app/fight/team/team.model';
 import { Die } from '../die/die.model';
 
@@ -13,6 +13,7 @@ export class TeamComponent {
   @Input() remoteControlled = false;
   @Input() losses: number = 0;
   @Input() dice: Die[] = [new Die()];
+  @Output() diceChanges = new EventEmitter<Die[]>();
 
   rollAndSort() {
     this.dice.forEach(die => die.roll())
@@ -21,10 +22,12 @@ export class TeamComponent {
 
   addDie() {
     this.dice = [...this.dice, new Die()];
+    this.diceChanges.emit(this.dice);
   }
 
   removeDie() {
     this.dice = this.dice.slice(0, -1);
+    this.diceChanges.emit(this.dice);
   }
 
   applyLoss() {
@@ -33,6 +36,7 @@ export class TeamComponent {
       this.losses = 0;
     }
   }
+
   reset() {
     this.dice = [new Die()];
     this.losses = 0;

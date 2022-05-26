@@ -65,17 +65,20 @@ export class FightComponent {
     );
     this.attacker.losses = losses.attacker;
     this.defender.losses = losses.defender;
-    this.service.share(this.fightId, this.getState(true));
+    this.shareState(true);
   }
   applyLoss() {
     this.attacker.applyLoss();
     this.defender.applyLoss();
-    this.service.share(this.fightId, this.getState());
+    this.shareState();
   }
   reset() {
     this.attacker.reset();
     this.defender.reset();
-    this.service.share(this.fightId, this.getState());
+    this.shareState();
+  }
+  shareState(animate = false) {
+    this.service.share(this.fightId, this.getState(animate));
   }
 
   getState(animate = false): Fight {
