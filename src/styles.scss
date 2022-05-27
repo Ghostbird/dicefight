@@ -9,6 +9,7 @@ html {
     right: 0;
     overflow: hidden;
     user-select: none;
+    touch-action: manipulation;
   }
   * {
     box-sizing: border-box;
