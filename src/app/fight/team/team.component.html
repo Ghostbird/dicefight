@@ -22,9 +22,9 @@
     ></dice-die>
   </div>
   <div class="stats">
-    <span>Legers</span>
+    <span i18n>{ dice.length, plural, =1{Army} other {Armies} }</span>
     <span>{{ dice.length }}</span>
-    <span *ngIf="losses">Verliezen</span>
+    <span *ngIf="losses" i18n>{ dice.length, plural, =1{Loss} other {Losses} }</span>
     <span *ngIf="losses">{{ losses }}</span>
   </div>
 </div>

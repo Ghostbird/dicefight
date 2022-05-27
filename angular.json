@@ -34,7 +34,11 @@
               "src/styles.scss",
               "src/assets/dicefont.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "localize": [
+              "en",
+              "nl"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,7 +88,17 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dicefight:build"
+            "browserTarget": "dicefight:build",
+            "outputPath": "src/locale",
+            "outFile": "messages.en.xlf"
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "nl": {
+            "translation": "src/locale/messages.nl.xlf"
           }
         }
       }

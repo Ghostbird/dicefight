@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6077285076011394571" datatype="html">
+        <source>Attacker</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/fight/fight.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2210918709346020460" datatype="html">
+        <source>Defender</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/fight/fight.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3885815912302605886" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {Army} other {Armies}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/fight/team/team.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4383526601996965636" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {Loss} other {Losses}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/fight/team/team.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
